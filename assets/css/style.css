@@ -1,3 +1,5 @@
+/* global */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,13 @@ body {
     height: 100vh;
 }
 
+.debug {
+    background-color: rgba(0, 128, 0, 0.4);
+}
+
+
+/* recycling */
+
 .font-w-5 {
     font-weight: 500;
 }
@@ -28,6 +37,18 @@ body {
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.font-size-15 {
+    font-size: 15px;
+}
+
+.color-white:hover {
+    color: white;
+}
+
+.background-color-white:hover {
+    background-color: white;
 }
 
 
@@ -50,16 +71,156 @@ main .main-nav {
     float: left;
     width: 230px;
     height: 100%;
-}
-
-main .main-nav .nav-top {
-    height: calc(100% - 80px);
+    font-size: 12px;
+    color: gray;
     background-color: black;
 }
 
+
+/* nav top */
+
+main .main-nav .nav-top {
+    height: calc(100% - 80px);
+}
+
+
+/* logo */
+
+.main-nav .nav-top .logo {
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.main-nav .nav-top .logo img {
+    width: 135px;
+}
+
+
+/* list menu */
+
+.main-nav .nav-top .list-menu {
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+}
+
+.main-nav .nav-top .list-menu .home,
+.main-nav .nav-top .list-menu .search,
+.main-nav .nav-top .list-menu .libreria {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.main-nav .nav-top .list-menu .home img,
+.main-nav .nav-top .list-menu .search img,
+.main-nav .nav-top .list-menu .libreria img {
+    width: 30px;
+}
+
+
+/* crea playlist */
+
+.main-nav .nav-top .crea-playlist {
+    width: 100%;
+    height: 40vh;
+    padding: 20px 20px;
+    display: inline-block;
+}
+
+.main-nav .nav-top .crea-playlist h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.main-nav .nav-top .crea-playlist .plus-playlist {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.main-nav .nav-top .crea-playlist .plus {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    background-color: grey;
+}
+
+.main-nav .nav-top .crea-playlist .plus-playlist .fa-plus {
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    font-size: 20px;
+    color: black;
+}
+
+.main-nav .nav-top .crea-playlist ul {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.main-nav .nav-top .crea-playlist ul li {
+    list-style: none;
+    line-height: 30px;
+}
+
+
+/* nav bottom */
+
 main .main-nav .nav-bottom {
+    position: fixed;
+    width: 230px;
     height: 80px;
-    background-color: green;
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+
+
+/* download */
+
+.main-nav .nav-bottom .download {
+    width: 100%;
+    height: 25px;
+    color: gray;
+    border-bottom: 1px solid gray;
+}
+
+.main-nav .nav-bottom .download img {
+    max-width: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+/* profile */
+
+.main-nav .nav-bottom .profile {
+    width: 100%;
+    height: 55px;
+    padding: 10px 0;
+}
+
+.main-nav .nav-bottom .profile .image {
+    width: 25px;
+    height: 25px;
+    background-color: gray;
+    border-radius: 50px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.main-nav .nav-bottom .profile p {
+    display: inline-block;
+    font-size: 14px;
 }
 
 
@@ -69,6 +230,7 @@ main #content {
     float: left;
     width: calc(100% - 230px);
     height: 100%;
+    color: white;
     overflow-y: auto;
     background-color: rgb(20, 25, 34);
 }
@@ -102,9 +264,55 @@ main #content .call-to-action p:hover {
 }
 
 
+/* covers */
+
+#content .covers {
+    margin-top: 80px;
+}
+
+#content .covers .list-inline {
+    display: flex;
+    justify-content: center;
+}
+
+#content .covers .list-inline li {
+    display: inline;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: gray;
+}
+
+#content .covers .list-inline li span:hover {
+    cursor: pointer;
+    color: white;
+}
+
+
+/* playlist */
+
+.playlist .recently-played ul {
+    display: flex;
+    height: 40vh;
+}
+
+.playlist .recently-played ul li {
+    text-align: center;
+    padding: 10px;
+    list-style: none;
+}
+
+.playlist .recently-played ul li img {
+    width: 150px;
+}
+
+
 /* footer */
 
 footer {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     height: 80px;
     background-color: rgb(40, 40, 40);
 }
@@ -165,33 +373,6 @@ footer #player {
 .footer-left .footer-play .fa-heart:hover,
 .footer-left .footer-play .fa-folder:hover {
     color: white;
-}
-
-@media screen and (max-width: 768px) {
-    .footer-left {
-        padding: 0;
-    }
-    .footer-left img {
-        width: 25px;
-        height: 25px;
-        margin: 5px;
-    }
-    .footer-left .footer-playlist h4 {
-        font-size: 8px;
-    }
-    .footer-left .footer-playlist p {
-        font-size: 6px;
-        margin-right: 20px;
-    }
-    .footer-left .footer-play {
-        font-size: 10px;
-    }
-    .footer-left .footer-play .fa-heart {
-        display: block;
-    }
-    .footer-playlist p span {
-        display: block;
-    }
 }
 
 
@@ -277,24 +458,6 @@ footer #player {
     background-color: white;
 }
 
-@media screen and (max-width: 768px) {
-    .footer-center .footer-audio i {
-        font-size: 10px;
-        margin: 0 8px;
-    }
-    .footer-center .footer-audio .fa-play-circle {
-        font-size: 16px;
-        margin: 0 10px;
-    }
-    .footer-center .scroll-bar .time {
-        font-size: 6px;
-    }
-    .footer-center .scroll-bar .row-background {
-        width: 70px;
-        height: 3px;
-    }
-}
-
 
 /* footer right */
 
@@ -334,7 +497,123 @@ footer #player {
     background-color: rgb(90, 90, 90);
 }
 
+
+/* media querry */
+
 @media screen and (max-width: 768px) {
+    /* main */
+    /* main nav */
+    main .main-nav {
+        width: 50px;
+    }
+    /* nav top */
+    main .main-nav {
+        background-color: black;
+    }
+    /* logo */
+    main .main-nav .nav-top .logo {
+        width: 80%;
+        height: 40px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-image: url(../img/logo-small.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .main-nav .nav-top .logo img {
+        display: none;
+    }
+    /* list menu */
+    .main-nav .nav-top .list-menu {
+        padding-left: 10px;
+    }
+    .main-nav .nav-top .list-menu span {
+        display: none;
+    }
+    .main-nav .nav-top .list-menu .home,
+    .main-nav .nav-top .list-menu .search,
+    .main-nav .nav-top .list-menu .libreria {
+        width: 100%;
+        height: 30px;
+    }
+    .main-nav .nav-top .list-menu .home img,
+    .main-nav .nav-top .list-menu .search img,
+    .main-nav .nav-top .list-menu .libreria img {
+        width: 30px;
+    }
+    /* crea playlist */
+    .main-nav .nav-top .crea-playlist {
+        display: none;
+    }
+    /* nav bottom */
+    main .main-nav .nav-bottom {
+        position: fixed;
+        text-align: center;
+        width: 50px;
+    }
+    /* download */
+    .main-nav .nav-bottom .download {
+        border: none;
+    }
+    .nav-bottom .download span {
+        display: none;
+    }
+    /* /main nav */
+    /* call to action */
+    main #content {
+        width: calc(100% - 50px);
+    }
+    main #content .call-to-action {
+        width: calc(100% - 50px);
+    }
+    /* /main */
+    /* footer */
+    footer #player {
+        justify-content: center;
+    }
+    /* footer left */
+    .footer-left {
+        padding: 0;
+    }
+    .footer-left img {
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+    }
+    .footer-left .footer-playlist h4 {
+        font-size: 8px;
+    }
+    .footer-left .footer-playlist p {
+        font-size: 6px;
+        margin-right: 20px;
+    }
+    .footer-left .footer-play {
+        font-size: 10px;
+    }
+    .footer-left .footer-play .fa-heart {
+        display: block;
+    }
+    .footer-playlist p span {
+        display: block;
+    }
+    /* footer center */
+    .footer-center .footer-audio i {
+        font-size: 10px;
+        margin: 0 8px;
+    }
+    .footer-center .footer-audio .fa-play-circle {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+    .footer-center .scroll-bar .time {
+        font-size: 6px;
+    }
+    .footer-center .scroll-bar .row-background {
+        width: 70px;
+        height: 3px;
+    }
+    /* footer right */
     .footer-right {
         font-size: 8px;
         padding: 5px;
@@ -353,4 +632,5 @@ footer #player {
         margin-right: 0;
         height: 3px;
     }
+    /* /footer */
 }
