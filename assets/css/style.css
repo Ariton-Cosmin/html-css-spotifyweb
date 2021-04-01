@@ -246,9 +246,10 @@ main #content .call-to-action {
     width: calc(100% - 230px);
     height: 80px;
     text-transform: uppercase;
-    padding-right: 5px;
+    padding-right: 20px;
+    z-index: 999;
     color: white;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0, 0.7);
 }
 
 main #content .call-to-action p {
@@ -304,13 +305,13 @@ main #content .call-to-action p:hover {
     margin-bottom: 20px;
 }
 
-.playlist .recently-played .list-image {
+.list-image {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
-.playlist .recently-played .list-image li {
+.list-image li {
     width: 170px;
     height: 230px;
     margin-left: 5px;
@@ -318,27 +319,47 @@ main #content .call-to-action p:hover {
     list-style: none;
 }
 
-.playlist .recently-played .list-image li .image {
+.list-image li .image {
+    position: relative;
     width: 140px;
     height: 140px;
     margin: auto;
     margin-bottom: 8px;
 }
 
-.playlist .recently-played .list-image li .image img {
+.list-image li .image img {
     max-width: 100%;
+    cursor: pointer;
 }
 
-.playlist .recently-played .list-image li .text {
+.list-image li .image .fa-play-circle {
+    position: absolute;
+    font-size: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+.list-image li .image:hover .fa-play-circle {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.list-image li .text {
     text-align: center;
 }
 
-.playlist .recently-played .list-image li .text h4 {
+.list-image li .text h4 {
     font-size: 15px;
     margin-bottom: 5px;
 }
 
-.playlist .recently-played .list-image li .text p {
+.list-image li .text p {
     font-size: 12px;
     font-weight: 600;
     color: gray;
@@ -346,6 +367,39 @@ main #content .call-to-action p:hover {
 
 
 /* creato per john doe */
+
+.playlist .john-doe {
+    margin-top: 20px;
+}
+
+.playlist .john-doe p {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+
+/* artisti più popolari */
+
+.playlist .artisti-popolari {
+    margin-top: 20px;
+}
+
+.playlist .artisti-popolari p {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+.playlist .artisti-popolari .image img {
+    border-radius: 50%;
+}
+
+.artisti-popolari .list-image li .image:hover .fa-play-circle {
+    border-radius: 50%;
+}
 
 
 /* footer */
