@@ -268,22 +268,28 @@ main #content .call-to-action p:hover {
 
 #content .covers {
     margin-top: 80px;
+    padding: 20px;
 }
+
+
+/* list-inline */
 
 #content .covers .list-inline {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #content .covers .list-inline li {
     display: inline;
-    padding: 15px 10px;
+    padding-bottom: 15px;
+    padding-left: 15px;
     text-transform: uppercase;
     font-size: 13px;
     color: gray;
 }
 
-#content .covers .list-inline li span:hover {
+#content .covers .list-inline li:hover {
     cursor: pointer;
     color: white;
 }
@@ -291,20 +297,55 @@ main #content .call-to-action p:hover {
 
 /* playlist */
 
-.playlist .recently-played ul {
-    display: flex;
-    height: 40vh;
+
+/* recently played */
+
+.playlist .recently-played h2 {
+    margin-bottom: 20px;
 }
 
-.playlist .recently-played ul li {
-    text-align: center;
-    padding: 10px;
+.playlist .recently-played .list-image {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.playlist .recently-played .list-image li {
+    width: 170px;
+    height: 230px;
+    margin-left: 5px;
+    display: inline-block;
     list-style: none;
 }
 
-.playlist .recently-played ul li img {
-    width: 150px;
+.playlist .recently-played .list-image li .image {
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    margin-bottom: 8px;
 }
+
+.playlist .recently-played .list-image li .image img {
+    max-width: 100%;
+}
+
+.playlist .recently-played .list-image li .text {
+    text-align: center;
+}
+
+.playlist .recently-played .list-image li .text h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.playlist .recently-played .list-image li .text p {
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}
+
+
+/* creato per john doe */
 
 
 /* footer */
